@@ -18,11 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/domain/{add}', function () {
+Route::get('/domain/{add}', function () {
 
-//     Artisan::call('domain:add'); // command
-//     //dd("Done!!!");
-// });
+    Artisan::call('users:list'); // command
+    //dd("Done!!!");
+
+    return 'User fetched';
+});
 
 Route::get('/domain/{domain}', function ($domain) {
     $exitCode = Artisan::call('domain:add', [
